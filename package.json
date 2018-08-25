@@ -1,0 +1,24 @@
+{
+  "name": "runts",
+  "version": "0.0.1",
+  "description": "A React Component Library",
+  "main": "src/lib/index.js",
+  "repository": "git@github.com:stockwellb/runts.git",
+  "author": "Bruce Stockwell <bruce.stockwell@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook -p 9009 -s dist",
+    "build-storybook": "build-storybook -s dist"
+  },
+  "dependencies": {
+    "@storybook/addon-knobs": "^3.4.10",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/react": "^3.4.8",
+    "babel-core": "^6.26.3"
+  }
+}
