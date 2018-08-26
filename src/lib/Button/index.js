@@ -3,9 +3,7 @@ import styled from "styled-components";
 import * as colors from "../colors";
 import { spacing } from "../spacing";
 
-const hoverColor = disabled => (!disabled ? staticColor(true) : null);
-
-const staticColor = primary =>
+const getColors = primary =>
   primary
     ? `
         background: ${colors.PRIMARY};
@@ -26,13 +24,13 @@ const StyledButton = styled.button`
   padding-right: ${spacing(4)};
   padding-top: ${spacing(2)};
   padding-bottom: ${spacing(2)};
-  ${({ primary }) => staticColor(primary)};
+  ${({ primary }) => getColors(primary)};
   ${border()};
   &:disabled {
     opacity: 0.3;
   }
   &:hover {
-    ${({ disabled }) => hoverColor(disabled)};
+    ${({ disabled }) => (!disabled ? getColors(true) : null)};
   }
   &:focus {
     outline: "none";
