@@ -16,7 +16,7 @@ storiesOf("Button", module)
     </Button>
   ))
   .add("Primary upperCased", () => (
-    <Button primary onClick={action("button clicked")}>
+    <Button primary>
       <UpperCase>Save</UpperCase>
     </Button>
   ))
