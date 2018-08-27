@@ -38,20 +38,14 @@ const StyledButton = styled.button`
   }
 `;
 
-class Button extends React.Component {
-  render() {
-    const { tabIndex, disabled, children, ...other } = this.props;
-
-    return (
-      <StyledButton
-        tabIndex={disabled ? "-1" : tabIndex}
-        disabled={disabled}
-        {...other}
-      >
-        {children}
-      </StyledButton>
-    );
-  }
-}
+const Button = ({ tabIndex, disabled, children, ...other }) => (
+  <StyledButton
+    tabIndex={disabled ? "-1" : tabIndex}
+    disabled={disabled}
+    {...other}
+  >
+    {children}
+  </StyledButton>
+);
 
 export { Button };
