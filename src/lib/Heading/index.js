@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import * as colors from "../colors";
 
 const createHeading = component => styled[component]`
-  color: ${colors.PRIMARY};
+  color: ${({ theme }) => theme.palette.primary.main};
   text-align: ${({ align }) => align || "left"};
 `;
 

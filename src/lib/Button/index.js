@@ -1,40 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import * as colors from "../colors";
 import { spacing } from "../spacing";
 
-const getColors = primary =>
+const getColors = (theme, primary) =>
   primary
     ? `
-        background: ${colors.PRIMARY};
-        color: ${colors.SECONDARY};
-        `
+      background: ${theme.palette.primary.main};
+      color: ${theme.palette.secondary.main};
+      `
     : `
-        background: ${colors.SECONDARY};
-        color: ${colors.PRIMARY};
-        `;
+      background: ${theme.palette.secondary.main};
+      color: ${theme.palette.primary.main};
+      `;
 
-const border = () => `
+const border = theme => `
     border-width: ${spacing(1)};
     border-style: solid;
-    border-color: ${colors.PRIMARY};`;
+    border-color: ${theme.palette.primary.main};`;
 
 const StyledButton = styled.button`
   padding-left: ${spacing(4)};
   padding-right: ${spacing(4)};
   padding-top: ${spacing(2)};
   padding-bottom: ${spacing(2)};
-  ${({ primary }) => getColors(primary)};
-  ${border()};
+  ${({ theme, primary }) => getColors(theme, primary)};
+  ${({ theme }) => border(theme)};
   &:disabled {
     opacity: 0.3;
   }
   &:hover {
-    ${({ disabled }) => (!disabled ? getColors(true) : null)};
+    ${({ theme, disabled }) => (!disabled ? getColors(theme, true) : null)};
   }
   &:focus {
     outline: "none";
-    box-shadow: 0 0 0 ${spacing(1)} ${colors.PRIMARY};
+    box-shadow: 0 0 0 ${spacing(1)} ${({ theme }) => theme.palette.primary.main};
   }
 `;
 

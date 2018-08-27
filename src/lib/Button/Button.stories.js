@@ -4,24 +4,43 @@ import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 import { Button } from "./index";
+import { ThemeProvider } from "../ThemeProvider";
 import { UpperCase } from "../index";
 
 storiesOf("Button", module)
-  .add("Default", () => <Button>Save</Button>)
-  .add("Default disabled", () => <Button disabled>Save</Button>)
-  .add("Primary", () => <Button primary>Save</Button>)
+  .add("Default", () => (
+    <ThemeProvider>
+      <Button>Save</Button>
+    </ThemeProvider>
+  ))
+  .add("Default disabled", () => (
+    <ThemeProvider>
+      <Button disabled>Save</Button>
+    </ThemeProvider>
+  ))
+  .add("Primary", () => (
+    <ThemeProvider>
+      <Button primary>Save</Button>
+    </ThemeProvider>
+  ))
   .add("Primary disabled", () => (
-    <Button disabled primary>
-      Save
-    </Button>
+    <ThemeProvider>
+      <Button disabled primary>
+        Save
+      </Button>
+    </ThemeProvider>
   ))
   .add("Primary upperCased", () => (
-    <Button primary>
-      <UpperCase>Save</UpperCase>
-    </Button>
+    <ThemeProvider>
+      <Button primary>
+        <UpperCase>Save</UpperCase>
+      </Button>
+    </ThemeProvider>
   ))
   .add("OnClick", () => (
-    <Button primary onClick={action("button clicked")}>
-      Save
-    </Button>
+    <ThemeProvider>
+      <Button primary onClick={action("button clicked")}>
+        Save
+      </Button>
+    </ThemeProvider>
   ));
