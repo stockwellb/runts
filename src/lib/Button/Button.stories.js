@@ -20,26 +20,36 @@ storiesOf("Button", module)
   ))
   .add("Primary", () => (
     <ThemeProvider>
-      <Button primary>Save</Button>
+      <Button variant="primary">Save</Button>
     </ThemeProvider>
   ))
   .add("Primary disabled", () => (
     <ThemeProvider>
-      <Button disabled primary>
+      <Button disabled variant="primary">
         Save
       </Button>
     </ThemeProvider>
   ))
   .add("Primary upperCased", () => (
     <ThemeProvider>
-      <Button primary>
+      <Button variant="primary">
         <UpperCase>Save</UpperCase>
       </Button>
     </ThemeProvider>
   ))
+  .add("Error", () => (
+    <ThemeProvider>
+      <Button variant="error">Save</Button>
+    </ThemeProvider>
+  ))
+  .add("Success", () => (
+    <ThemeProvider>
+      <Button variant="success">Save</Button>
+    </ThemeProvider>
+  ))
   .add("OnClick", () => (
     <ThemeProvider>
-      <Button primary onClick={action("button clicked")}>
+      <Button variant="primary" onClick={action("button clicked")}>
         Save
       </Button>
     </ThemeProvider>
