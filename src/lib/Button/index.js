@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { spacing } from "../spacing";
 
 const getColors = (theme, primary) =>
   primary
@@ -14,15 +13,15 @@ const getColors = (theme, primary) =>
       `;
 
 const border = theme => `
-    border-width: ${spacing(1)};
+    border-width: ${theme.spacing.unit * 1}px;
     border-style: solid;
     border-color: ${theme.palette.primary.main};`;
 
 const StyledButton = styled.button`
-  padding-left: ${spacing(4)};
-  padding-right: ${spacing(4)};
-  padding-top: ${spacing(2)};
-  padding-bottom: ${spacing(2)};
+  padding-left: ${({ theme }) => theme.spacing.unit * 4}px;
+  padding-right: ${({ theme }) => theme.spacing.unit * 4}px;
+  padding-top: ${({ theme }) => theme.spacing.unit * 2}px;
+  padding-bottom: ${({ theme }) => theme.spacing.unit * 2}px;
   ${({ theme, primary }) => getColors(theme, primary)};
   ${({ theme }) => border(theme)};
   &:disabled {
@@ -33,7 +32,8 @@ const StyledButton = styled.button`
   }
   &:focus {
     outline: "none";
-    box-shadow: 0 0 0 ${spacing(1)} ${({ theme }) => theme.palette.primary.main};
+    box-shadow: 0 0 0 ${({ theme }) => theme.spacing.unit * 1}px;
+    ${({ theme }) => theme.palette.primary.main};
   }
 `;
 

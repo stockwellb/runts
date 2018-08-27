@@ -5,6 +5,9 @@ class ThemeProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      spacing: {
+        unit: 2
+      },
       palette: {
         primary: {
           main: "blue",
