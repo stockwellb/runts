@@ -5,6 +5,11 @@ import { Divider } from "./index";
 
 storiesOf("Divider", module).add("Default", () => (
   <ThemeProvider>
-    <Divider />
+    <React.Fragment>
+      <Divider variant="primary" />
+      <Divider variant="secondary" />
+      <Divider variant="error" />
+      <Divider variant="success" />
+    </React.Fragment>
   </ThemeProvider>
 ));

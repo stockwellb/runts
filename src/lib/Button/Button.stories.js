@@ -37,14 +37,14 @@ storiesOf("Button", module)
       </Button>
     </ThemeProvider>
   ))
-  .add("Error", () => (
+  .add("All", () => (
     <ThemeProvider>
-      <Button variant="error">Save</Button>
-    </ThemeProvider>
-  ))
-  .add("Success", () => (
-    <ThemeProvider>
-      <Button variant="success">Save</Button>
+      <React.Fragment>
+        <Button variant="primary">Save</Button>
+        <Button variant="secondary">Save</Button>
+        <Button variant="error">Save</Button>
+        <Button variant="success">Save</Button>
+      </React.Fragment>
     </ThemeProvider>
   ))
   .add("OnClick", () => (
